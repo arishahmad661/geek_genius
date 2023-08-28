@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/utils.dart';
 
 import '../../controllers/home_page_controller.dart';
 import 'bottom_sheet.dart';
@@ -23,7 +25,13 @@ class QuizView extends StatelessWidget {
                   ShowBottomSheet().showBottomSheet(i);
                 },
                 child: Container(
-                    width: MediaQuery.of(context).size.width-110,
+                  constraints: BoxConstraints(
+                    // width: MediaQuery.of(context).size.width-110,//minimum height
+                    minWidth: 200, // minimum width
+                    maxHeight: 500,
+                    maxWidth: 300,
+                    //maximum width set to 100% of width
+                  ),
                     margin: const EdgeInsets.symmetric(horizontal: 5.0),
                     decoration: const BoxDecoration(
                         boxShadow:[ BoxShadow(color: Colors.black,offset: Offset(5.0, 5.0),)],

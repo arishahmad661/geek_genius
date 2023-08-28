@@ -16,11 +16,44 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.amber
+              ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    CircleAvatar(
+                      maxRadius: 45,
+                    ),
+                    Text("User Name",style: TextStyle(fontSize: 25),),
+                  ],
+                ),
+            ),
+            ListTile(
+              title: Text("Share"),
+            ),
+            ListTile(
+              title: Text("Review on playstore"),
+            ),
+            ListTile(
+              title: Text("Buy be a coffee"),
+            )
+          ],
+        ),
+      ),
         appBar: AppBar(
           title: Text("Trivia Quiz!!"),
           centerTitle: true,
-          actions: const [Icon(Icons.account_circle_sharp),],
+          actions:  [IconButton(
+            onPressed: (){
+
+            },
+              icon: Icon(Icons.account_circle_sharp,size: 40,)),],
         ),
         body: Center(
           child: QuizView(),

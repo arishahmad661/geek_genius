@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quiz_app/views/match/option_display_widget.dart';
+import 'package:timer_count_down/timer_count_down.dart';
 import '../../controllers/gameplay_screen_controller.dart';
 
 Widget questionCard() {
@@ -33,22 +34,30 @@ Widget questionCard() {
                       Border.all(color: Colors.black),
                       borderRadius:
                       BorderRadius.circular(5)),
-                  child: const Row(
+                  child: Row(
                     crossAxisAlignment:
                     CrossAxisAlignment.center,
                     mainAxisAlignment:
                     MainAxisAlignment.spaceAround,
                     children: [
                       Icon(Icons.timer, size: 25),
-                      Text(
-                        "10.0s",
-                        style: TextStyle(
+                      Countdown(
+                        controller: gamePlayScreenController.controller,
+                        seconds: 10,
+                        build: (BuildContext context, double time) => Text(time.toString(),style: const TextStyle(
                             fontSize: 16,
-                            fontWeight: FontWeight.bold),
+                            fontWeight: FontWeight.bold),),
+                        interval: const Duration(milliseconds: 100),
+                        onFinished: () {
+                          gamePlayScreenController.isFloatingButtonActive.value = true;
+                            gamePlayScreenController.selectedOption.value = gamePlayScreenController.correctOption.value;
+                        },
                       )
+
                     ],
                   ),
                 ),
+
               ],
             ),
             const SizedBox(

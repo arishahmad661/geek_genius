@@ -13,7 +13,7 @@ Widget actionButton() {
     backgroundColor: Colors.indigo,
     foregroundColor: Colors.white,
     onPressed: () {
-
+      gamePlayScreenController.restartCounter();
       if(gamePlayScreenController.quesIndex.value == Get.arguments['noOfQues'] -1){
         Get.back();
         Get.toNamed("/resultScreen",arguments: {"points" : gamePlayScreenController.points.value.toString()} );

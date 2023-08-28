@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:quiz_app/controllers/home_page_controller.dart';
+import 'package:quiz_app/get_storage/get_storage.dart';
 
 class ShowBottomSheet {
   final homePageController = HomePageController();
@@ -63,6 +65,7 @@ class ShowBottomSheet {
                   child: InkWell(
                     onTap: (){
                       Get.back();
+                      GetStorageClass().store(homePageController.quizNames[index].toString(),homePageController.quizImages[index].toString(),homePageController.numberOfQues.value,);
                       Get.toNamed(
                           "/gamePlayScreen",
                           arguments: {

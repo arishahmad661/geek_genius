@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,12 +11,13 @@ Widget optionDisplayWidget(option) {
 
   return Obx(()  => InkWell(
     onTap: (){
-      gamePlayScreenController.isFloatingButtonActive.value = true;
-      if(option == gamePlayScreenController.correctOption.value){
-        gamePlayScreenController.points.value++;
-      }
       if(gamePlayScreenController.selectedOption.value ==""){
         gamePlayScreenController.selectedOption.value = option;
+        gamePlayScreenController.pauseCounter();
+        gamePlayScreenController.isFloatingButtonActive.value = true;
+        if(option == gamePlayScreenController.correctOption.value){
+          gamePlayScreenController.points.value++;
+        }
       }
     },
     child: Container(

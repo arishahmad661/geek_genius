@@ -2,11 +2,18 @@ import 'dart:convert';
 import 'dart:math';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:timer_count_down/timer_controller.dart';
 import '../model/quiz_data.dart';
 
 
 class GamePlayScreenController extends GetxController{
-
+  final CountdownController controller = new CountdownController(autoStart: true);
+  void restartCounter(){
+    controller.restart();
+  }
+  void pauseCounter(){
+    controller.pause();
+  }
   RxList quizDataList = [].obs;
   RxInt quesIndex = 0.obs;
   RxList shufflesOptions = [].obs;
@@ -36,6 +43,8 @@ class GamePlayScreenController extends GetxController{
     shufflesOptions.insert(n,correctOption.value);
 
   }
+
+
 
 
 }

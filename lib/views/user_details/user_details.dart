@@ -1,7 +1,0 @@
-class UserDetails{
-
-
-  void changeUserDetails(){
-
-  }
-}

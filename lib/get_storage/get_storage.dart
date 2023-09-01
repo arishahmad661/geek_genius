@@ -8,9 +8,7 @@ class GetStorageClass{
     box.write('quizAsset', asset);
     box.write('maxPoints', max);
   }
-  void read(){
 
-  }
   void remove(){
     box.remove('quizName');
     box.remove('quizAsset');

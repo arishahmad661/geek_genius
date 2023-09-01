@@ -40,6 +40,9 @@ dependencies:
   http: ^1.1.0
   get_storage: ^2.1.1
   timer_count_down: ^2.2.2
+  screenshot: ^2.1.0
+  share_plus: ^7.1.0
+  path_provider: ^2.1.1
 
 dev_dependencies:
   flutter_test:

@@ -7,7 +7,7 @@ import '../model/quiz_data.dart';
 
 
 class GamePlayScreenController extends GetxController{
-  final CountdownController controller = new CountdownController(autoStart: true);
+  final CountdownController controller = CountdownController(autoStart: true);
   void restartCounter(){
     controller.restart();
   }

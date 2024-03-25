@@ -2,7 +2,7 @@
 class Assets {
   Assets._();
 
-  static const String assetsAnime&manga = 'assets/anime&manga.png';
+  static const String assetsAnimemanga = 'assets/anime&manga.png';
   static const String assetsBooks = 'assets/books.png';
   static const String assetsCartoon = 'assets/cartoon.png';
   static const String assetsComics = 'assets/comics.png';

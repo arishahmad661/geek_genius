@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 Widget homeDrawer() {
   return Drawer(
@@ -21,15 +23,28 @@ Widget homeDrawer() {
             ],
           ),
         ),
-        const ListTile(
-          title: Text("Share"),
+        InkWell(
+          onTap: (){
+            Share.share("Share the newly build app by Arish Ahmad in Code Casa Virtual Internship \n https://github.com/arishahmad661/trivia_quiz");
+          },
+          child: const ListTile(
+            title: Text("Share"),
+          ),
+        ),
+        InkWell(
+          onTap: ()async{
+            final Uri url = Uri.parse('https://github.com/arishahmad661/trivia_quiz');
+            if (!await launchUrl(url)) {
+            throw Exception('Could not launch $url');
+            }
+          },
+          child: const ListTile(
+            title: Text("Checkout Source Code"),
+          ),
         ),
         const ListTile(
-          title: Text("Review on playstore"),
+          title: Text("History"),
         ),
-        const ListTile(
-          title: Text("Checkout Source Code"),
-        )
       ],
     ),
   );

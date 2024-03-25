@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:quiz_app/views/home/home_screen.dart';
 import 'package:quiz_app/views/match/gameplay_screen.dart';
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
     print(nickname);
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Trivia Quiz',
+      title: 'Geek Genius',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurpleAccent),
         useMaterial3: true,

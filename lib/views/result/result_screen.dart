@@ -42,7 +42,7 @@ class ResultScreen extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        SizedBox(height: 10,),
+                        const SizedBox(height: 10,),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Align(
@@ -52,7 +52,7 @@ class ResultScreen extends StatelessWidget {
                                     color: Colors.white,
                                     border: Border.all(color: Colors.black),
                                     borderRadius: BorderRadius.circular(5),
-                                    boxShadow: [BoxShadow(color: Colors.black,offset: Offset(5,5))]
+                                    boxShadow: const [BoxShadow(color: Colors.black,offset: Offset(5,5))]
                                 ),
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
@@ -64,8 +64,8 @@ class ResultScreen extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Image.asset(GetStorage().read('quizAsset')),
                         ),
-                        Text(GetStorage().read('quizName'),style: TextStyle(fontSize: 30),),
-                        SizedBox(height: 10,)
+                        Text(GetStorage().read('quizName'),style: const TextStyle(fontSize: 30),),
+                        const SizedBox(height: 10,)
                       ],
                     ),
                   )
@@ -77,7 +77,7 @@ class ResultScreen extends StatelessWidget {
                   onTap: (){
                     resultScreenController.takeScreenShot();
                   },
-                  child: SizedBox(
+                  child: const SizedBox(
                     width: 100,
                     child: Row(
                       children: [

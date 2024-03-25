@@ -65,7 +65,7 @@ class UserProfile extends StatelessWidget {
                                 onTap: (){
                                   userProfileCtrl.selectedProfileImage.value = userProfileCtrl.profileImages[index];
                                 },
-                                  child: Image.asset(userProfileCtrl.profileImages[index])),
+                                  child: Image.asset(userProfileCtrl.profileImages[index]), ),
                             ),
                           )),
                         ),

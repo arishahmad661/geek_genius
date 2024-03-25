@@ -43,6 +43,8 @@ dependencies:
   screenshot: ^2.1.0
   share_plus: ^7.1.0
   path_provider: ^2.1.1
+  flutter_launcher_icons: ^0.13.1
+  url_launcher: ^6.1.14
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +57,23 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
 
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/quiz_icon.jpeg"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/icon/quiz_icon.jpeg"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/icon/quiz_icon.jpeg"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/icon/quiz_icon.jpeg"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

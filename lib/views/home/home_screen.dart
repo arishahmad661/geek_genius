@@ -20,15 +20,15 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       drawer: homeDrawer(),
         appBar: AppBar(
-          title: Text("Trivia Quiz!!"),
+          title: const Text("Geek Genius"),
           centerTitle: true,
           actions:  [IconButton(
             onPressed: (){
               Get.toNamed("/userProfile");
             },
-              icon: Icon(Icons.account_circle_sharp,size: 40,)),],
+              icon: const Icon(Icons.account_circle_sharp,size: 40,)),],
         ),
-        body: Center(
+        body: const Center(
           child: QuizView(),
         ));
   }
